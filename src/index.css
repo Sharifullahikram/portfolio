@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ink font-sans text-slate-200 antialiased overflow-x-hidden; }
+  h1, h2, h3 { @apply font-display text-white; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-accent; }
+  ::selection { background: rgba(124, 156, 255, 0.35); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .section { @apply py-20 sm:py-28; }
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-line bg-surface px-5 py-2.5 text-sm font-medium text-white transition hover:border-accent active:scale-[0.98]; }
+  .btn-primary { @apply border-accent bg-accent text-ink hover:bg-white hover:border-white; }
+  .card { @apply rounded-2xl border border-line bg-surface/80 shadow-soft; }
+}
